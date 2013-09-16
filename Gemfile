@@ -5,10 +5,8 @@ gem 'rails', '3.2.14'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 gem 'koala'
 gem 'bootstrap-sass', '2.0.0'
-gem 'slim'
 gem 'haml'
 # Gems used only for assets and not required
 # in production environments by default.
@@ -25,6 +23,11 @@ end
 group :development do
 	gem 'better_errors'
 	gem 'binding_of_caller'
+	gem 'sqlite3'
+end
+
+group :production do
+	gem 'pg'
 end
 
 gem 'quiet_assets'
