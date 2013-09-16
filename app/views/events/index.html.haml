@@ -1,0 +1,13 @@
+.container
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Start time
+        %th Event name
+        %th Location
+    %tbody
+      - @events.reverse.each do |event|
+        %tr
+          %th= Date.iso8601(event["start_time"]).strftime("%d-%m-%y")
+          %th= link_to event["name"], event_path(event["id"])
+          %th= event["location"]
