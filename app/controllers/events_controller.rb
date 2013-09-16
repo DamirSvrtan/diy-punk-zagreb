@@ -7,8 +7,8 @@ class EventsController < ApplicationController
 	before_filter {	@graph = Koala::Facebook::API.new(APP_ACCESS_TOKEN) }
 
 	def index
-	#	@oauth = Koala::Facebook::OAuth.new(APP_ID, APP_SECRET, "http://localhost:3000/")
-	#	@access_token = @oauth.get_app_access_token
+		#	@oauth = Koala::Facebook::OAuth.new(APP_ID, APP_SECRET, "http://localhost:3000/")
+		#	@access_token = @oauth.get_app_access_token
 		@events = @graph.get_connections("334751420002389", "events")
 		#@events.each do |event|
 		#	Event.create_event(event) if Event.where(fb_id: event["id"]).first.nil?
