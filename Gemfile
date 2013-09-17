@@ -20,14 +20,14 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :development do
+group :development, :test do
+  gem 'sqlite3'
 	gem 'better_errors'
 	gem 'binding_of_caller'
-	gem 'sqlite3'
 end
 
 group :production do
-	gem 'pg'
+  gem 'pg'
 end
 
 gem 'quiet_assets'
