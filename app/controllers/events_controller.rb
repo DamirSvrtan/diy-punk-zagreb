@@ -7,12 +7,8 @@ class EventsController < ApplicationController
 	before_filter {	@graph = Koala::Facebook::API.new(APP_ACCESS_TOKEN) }
 
 	def index
-		#	@oauth = Koala::Facebook::OAuth.new(APP_ID, APP_SECRET, "http://localhost:3000/")
-		#	@access_token = @oauth.get_app_access_token
-		@events = @graph.get_connections("334751420002389", "events")
-		#@events.each do |event|
-		#	Event.create_event(event) if Event.where(fb_id: event["id"]).first.nil?
-		#end
+		@events = @graph.get_connections("334751420002389", "events", {fields: "start_time,name,location,id,description"})
+		@events.select! {|event| event["start_time"] > Date.yesterday.to_s}
 	end
 
 	def show
@@ -21,3 +17,9 @@ class EventsController < ApplicationController
 
 
 end
+
+		#	@oauth = Koala::Facebook::OAuth.new(APP_ID, APP_SECRET, "http://localhost:3000/")
+		#	@access_token = @oauth.get_app_access_token
+		#@events.each do |event|
+		#	Event.create_event(event) if Event.where(fb_id: event["id"]).first.nil?
+		#end
