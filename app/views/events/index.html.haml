@@ -1,4 +1,6 @@
-.container
+.next-show.container
+
+.all-shows.container
   %table.table.table-striped
     %thead
       %tr
@@ -12,6 +14,6 @@
           %th= Date.iso8601(event["start_time"]).strftime("%d-%m-%y")
           %th= truncate event["name"], length: 65
           %th= event["location"]
-          %th
+          %th.links
             = facebook_link(event["description"])
             = lastfm_link(event["description"])

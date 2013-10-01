@@ -4,7 +4,7 @@ PunkShows::Application.routes.draw do
 
   root :to => 'events#index'
 
-	resources :events, only: [:show]
+  resources :events, only: [:show]
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
