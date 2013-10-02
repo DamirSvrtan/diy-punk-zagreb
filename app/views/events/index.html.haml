@@ -1,34 +1,60 @@
 = render 'layouts/navigation'
-.next-show.container
-  .row.heading-row
-    .span12
-      %p.headings Next Show
-  .row
-    .span12
-      %p.title-of-the-show Despite Everything (GR) / Allergic (GR) / Black Art (UK) / Blowgoat (UK)
-  .row
-    .span2
-      %p.date-of-show 22/12/2013
-    .span5
-      %p.location-of-show @Grey Room
-
-.all-shows.container
-  .row
-    .span12
-      %p.headings Future Shows
-  %table.table.table-striped
-    %thead
-      %tr
-        %th Start time
-        %th Event name
-        %th Location
-        %th Links
-    %tbody
-      - @events.reverse.each do |event|
+.next-show-fluid.container-fluid
+  .next-show.container
+    .row.heading-row
+      .span12
+        %p.headings Next Show
+    .row
+      .span12
+        %p.title-of-the-show Despite Everything (GR) / Allergic (GR) / Black Art (UK) / Blowgoat (UK)
+    .row
+      .span2
+        %p.date-of-show 22/12/2013
+      .span5
+        %p.location-of-show @Grey Room
+.all-shows-fluid.container-fluid
+  .all-shows.container
+    .row
+      .span12
+        %p.headings Future Shows
+    %table.table.table-striped
+      %thead
         %tr
-          %th= Date.iso8601(event["start_time"]).strftime("%d-%m-%y")
-          %th= truncate event["name"], length: 65
-          %th= event["location"]
-          %th.links
-            = facebook_link(event["description"])
-            = lastfm_link(event["description"])
+          %th Start time
+          %th Event name
+          %th Location
+          %th Links
+      %tbody
+        - @events.reverse.each do |event|
+          %tr
+            %th= Date.iso8601(event["start_time"]).strftime("%d-%m-%y")
+            %th= truncate event["name"], length: 65
+            %th= event["location"]
+            %th.links
+              = facebook_link(event["description"])
+              = lastfm_link(event["description"])
+
+.venues-fluid.container-fluid
+  .venues.container
+    .row
+      .span12
+        %p.headings Venues
+    .row
+      %table.table
+        %thead
+          %tr
+            %th AKC Medika
+            %th AKC Attack
+            %th Grey Room
+            %th Supica 
+            %th Mocvara
+            %th Jedinstvo
+            %th Spunk
+            %th Klaonica
+  #venue-map
+
+.about-fluid.container-fluid
+  .about.container
+    .row
+      .span12
+        %p.headings About

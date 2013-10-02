@@ -1,11 +1,17 @@
 @import "bootstrap";
 @import url(http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext);
 @import url(http://fonts.googleapis.com/css?family=Exo);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
+
+$blue: #75A1E4;
+$orange: #FFCD77;
+
+@import "navigation";
 body{
 	.headline{
 		height:100px;
 		text-align: center;
-		background-color: #75A1E4;
+		background-color: $blue;
 		#headline{
 			font-family: 'Lobster', cursive;
 			font-size:52px;
@@ -19,53 +25,98 @@ body{
 		font-weight:bold;
 		line-height: 40px;
 	}
-	.next-show{
-		background-color: yellow;
-		padding-top:20px;
-		.row{
-			padding-left: 10px;
-		}
-		.title-of-the-show{
-			font-size: 25px;
-			line-height: 25px;
-		}
-		.date-of-show{
-			font-size:20px;
-			line-height: 30px;
-		}
-		.location-of-show{
-			font-size:20px;
-			line-height: 30px;
-			font-weight: bold;
+	.next-show-fluid{
+		background-color: $blue;
+		.next-show{
+			padding-top:20px;
+			.row{
+				padding-left: 10px;
+			}
+			.title-of-the-show{
+				font-size: 25px;
+				line-height: 25px;
+			}
+			.date-of-show{
+				font-size:20px;
+				line-height: 30px;
+			}
+			.location-of-show{
+				font-size:20px;
+				line-height: 30px;
+				font-weight: bold;
+			}
 		}
 	}
-	.all-shows{
-		background-color: red;
-		padding-top:20px;
-		.row{
-			padding-left: 10px;
+	.all-shows-fluid{
+		background-color: $orange;
+		.all-shows{
+			padding-top:20px;
+			.row{
+				padding-left: 10px;
+			}
+			.table-striped{
+				tbody tr:nth-child(odd) th {
+					background-color:#F0F0F0;
+				}
+				tbody tr:nth-child(even) th {
+					background-color:#FFF;
+				}
+				thead{
+					tr{
+						th{
+							font-family: 'Droid Sans', sans-serif;
+							font-weight: normal;
+							font-size:18px;
+						}
+					}
+				}
+			}
+			th.links{
+				padding: 0px;
+			}
 		}
-		.table-striped{
-			tbody tr:nth-child(odd) th {
-				background-color:#F0F0F0;
-			}
-			tbody tr:nth-child(even) th {
-				background-color:#FFF;
-			}
-			thead{
-				tr{
-					th{
-						font-family: "Exo", sans-serif;
-						font-weight: normal;
-						font-size:18px;
+	}
+
+	.venues-fluid{
+		background-color: #E9E5DC;
+		.venues{
+			padding-top:20px;
+			.row{
+				padding-left: 10px;
+				table{
+					tr{
+						border-bottom:3px solid white;
+						th{
+							text-align: center;
+							&:hover{
+								background-color: white;
+								cursor: pointer; 
+							}
+							&.hovered{
+								background-color: white;
+								cursor: pointer; 
+							}
+						}
 					}
 				}
 			}
 		}
-		th.links{
-			padding: 0px;
+		#venue-map{
+			height:400px;
 		}
 	}
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 
