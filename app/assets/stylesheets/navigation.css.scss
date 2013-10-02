@@ -1,6 +1,6 @@
 .navigation{
 	height:55px;
-	background-color: #333;
+	background-color: #E9E5DC;
 	.tightener{
 		width:500px;
 		position: relative;
@@ -30,7 +30,7 @@ nav a {
 	display: inline-block;
 	margin:15px 0px;
 	outline: none;
-	color: #FFF;
+	color: #333;
 	text-decoration: none;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -50,7 +50,7 @@ nav a {
 	z-index: 1;
 	a {
 		padding: 0 5px;
-		color: #FFF;
+		color: #333;
 		font-weight: 700;
 		-webkit-transition: color 0.3s;
 		-moz-transition: color 0.3s;

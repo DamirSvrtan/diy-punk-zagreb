@@ -13,91 +13,54 @@
 
 // VENUES
 
-attack = {};
-    greyRoom = new google.maps.Marker({
-        position: new google.maps.LatLng(45.806419,15.964539),
-        map: map
+attack = { "lattitude": 45.806191, "longitude": 15.964491, "name": "AKC Attack", "address": "Pierottijeva 11"}
+greyRoom = { "lattitude": 45.806419, "longitude": 15.964539, "name": "Grey Room", "address": "Pierottijeva 11"}
+medika = { "lattitude": 45.806352, "longitude": 15.964293, "name": "AKC Medika", "address": "Pierottijeva 11"}
+warehouse = { "lattitude": 45.797235, "longitude": 16.013215, "name": "Warehouse", "address": "Slavonska avenija 3"}
+klaonica = { "lattitude": 45.805567, "longitude": 16.003731, "name": "Klaonica", "address": "Heinzlova ulica 66"}
+mochvara = { "lattitude": 45.791097, "longitude": 15.976218, "name": "Mochvara", "address": "Trnjanski nasip BB"}
+jedinstvo = { "lattitude": 45.791295, "longitude": 15.976432, "name": "Jedinstvo", "address": "Trnjanski nasip BB"}
+spunk = { "lattitude": 45.796142, "longitude": 15.978659, "name": "Spunk", "address": "Hrvatske Bratske zajednice bb"}
+
+venues = [attack, greyRoom, medika, warehouse, klaonica, mochvara, jedinstvo, spunk]
+
+venues.forEach(
+  function(venue){
+    venue["map"] = new google.maps.Marker({
+        position: new google.maps.LatLng(venue["lattitude"],venue["longitude"]),
+        map: map 
       });
+    }
+  );
 
-    attack["map"] = new google.maps.Marker({
-        position: new google.maps.LatLng(45.806191,15.964491),
-        map: map
+var TheInfoWindow = new google.maps.InfoWindow({
+  content: null
+});
+
+venues.forEach(
+  function(venue){
+      google.maps.event.addListener(venue["map"], 'click', function() {
+        TheInfoWindow.content = "<h3>"+ venue["name"] +"</h3><p>Adress:" + venue["address"] + "</p>"
+        TheInfoWindow.open(map,venue["map"]);
       });
-
-    medika = new google.maps.Marker({
-        position: new google.maps.LatLng(45.806352,15.964293),
-        map: map
-      });
-
-    warehouse = new google.maps.Marker({
-        position: new google.maps.LatLng(45.797235,16.013215),
-        map: map
-      });
-
-    klaonica = new google.maps.Marker({
-        position: new google.maps.LatLng(45.805567,16.003731),
-        map: map
-      });
-
-    mochvara = new google.maps.Marker({
-        position: new google.maps.LatLng(45.791097,15.976218),
-        map: map
-      });
-
-      jedinstvo = new google.maps.Marker({
-        position: new google.maps.LatLng(45.791295,15.976432),
-        map: map
-      });
-
-    spunk = new google.maps.Marker({
-        position: new google.maps.LatLng(45.796142,15.978659),
-        map: map
-      });
-
-      google.maps.event.addDomListener($('th:contains("Klaonica")')[0], 'click', function() {
-        map.setZoom(16);
-        map.setCenter(klaonica.getPosition());
-      });
+    }
+  );
 
 
-      google.maps.event.addDomListener($('th:contains("Medika")')[0], 'click', function() {
-        map.setZoom(16);
-        map.setCenter(medika.getPosition());
-      });
-
-      google.maps.event.addDomListener(spunk, 'click', function() {
-        $('th:contains("Spunk")').addClass("hovered");
-      });
+    //   google.maps.event.addDomListener($('th:contains("Klaonica")')[0], 'click', function() {
+    //     map.setZoom(16);
+    //     map.setCenter(klaonica.getPosition());
+    //   });
 
 
+    //   google.maps.event.addDomListener($('th:contains("Medika")')[0], 'click', function() {
+    //     map.setZoom(16);
+    //     map.setCenter(medika.getPosition());
+    //   });
 
-
-
-      //info Window for Grey Room
-
-      greyRoomInfo = "<h3> Grey Room </h3><p>Adress: Pierottijeva 11</p>"
-      attackInfo = "<h3> AKC Attack </h3><p>Adress: Pierottijeva 11</p>"
-      mochvaraInfo = "<h3> Mochvara </h3> <p> Adress: Trnjanski nasip BB </p>"
-      supicaInfo = "<h3> Supica @ Warehouse </h3> <p> Adress: Slavonska avenija 3</p>"
-
-      var TheInfoWindow = new google.maps.InfoWindow({
-        content: null
-      });
-
-      google.maps.event.addListener(greyRoom, 'click', function() {
-        TheInfoWindow.content = greyRoomInfo;
-        TheInfoWindow.open(map,greyRoom);
-      });
-
-      google.maps.event.addListener(attack["map"], 'click', function() {
-        TheInfoWindow.content = attackInfo;
-        TheInfoWindow.open(map,attack["map"]);
-      });
-
-      google.maps.event.addListener(mochvara, 'click', function() {
-        TheInfoWindow.content = mochvaraInfo;
-        TheInfoWindow.open(map,mochvara);
-      });
+    //   google.maps.event.addDomListener(spunk, 'click', function() {
+    //     $('th:contains("Spunk")').addClass("hovered");
+    //   });
 
   }
   google.maps.event.addDomListener(window, 'load', initialize);
