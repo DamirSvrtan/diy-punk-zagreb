@@ -8,6 +8,7 @@ $orange: #FFCD77;
 $grey: #E9E5DC;
 
 @import "navigation";
+.stuck{position: fixed; top: 0;width:1545px;z-index: 200}
 body{
 	.headline{
 		height:100px;
@@ -26,6 +27,10 @@ body{
 		font-weight:bold;
 		line-height: 40px;
 	}
+
+
+
+
 	.next-show-fluid{
 		background-color: $blue;
 		border-bottom: 5px solid $orange;
@@ -35,10 +40,13 @@ body{
 				padding-left: 10px;
 			}
 			.title-of-the-show{
+				color:white;
 				font-size: 25px;
 				line-height: 25px;
+				font-weight:bold;
 			}
 			.date-of-show{
+				color:white;
 				font-size:20px;
 				line-height: 30px;
 			}
@@ -49,9 +57,13 @@ body{
 			}
 		}
 	}
-	.all-shows-fluid{
+
+
+
+
+	.future-shows-fluid{
 		background-color: $orange;
-		.all-shows{
+		.future-shows{
 			padding-top:20px;
 			.row{
 				padding-left: 10px;
@@ -80,7 +92,7 @@ body{
 	}
 
 	.venues-fluid{
-		background-color: #E9E5DC;
+		background-color:  $grey;
 		height: 650px;
 		.venues{
 			padding-top:20px;
@@ -106,6 +118,20 @@ body{
 		}
 		#venue-map{
 			height:500px;
+		}
+	}
+
+	.about-fluid{
+		background-color: $orange;
+		.about{
+			margin-bottom: 20px;
+			padding-top: 20px;
+			.description{
+				p{
+					font-size: 18px;
+					line-height: 22px;
+				}
+			}
 		}
 	}
 

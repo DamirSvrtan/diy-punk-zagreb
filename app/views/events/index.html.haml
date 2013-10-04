@@ -1,3 +1,5 @@
+.headline.container-fluid
+  %p#headline DIY Punk Shows Zagreb
 = render 'layouts/navigation'
 .next-show-fluid.container-fluid
   .next-show.container
@@ -8,12 +10,16 @@
       .span12
         %p.title-of-the-show Despite Everything (GR) / Allergic (GR) / Black Art (UK) / Blowgoat (UK)
     .row
-      .span2
-        %p.date-of-show 22/12/2013
-      .span5
-        %p.location-of-show @Grey Room
-.all-shows-fluid.container-fluid
-  .all-shows.container
+      .span12
+        %p.date-of-show
+          %b 
+            22/12/2013  
+            @GreyRoom
+
+
+
+.future-shows-fluid.container-fluid
+  .future-shows.container
     .row
       .span12
         %p.headings Future Shows
@@ -34,6 +40,9 @@
               = facebook_link(event["description"])
               = lastfm_link(event["description"])
 
+
+
+
 .venues-fluid.container-fluid
   .venues.container
     .row
@@ -53,8 +62,17 @@
             %th.venue Klaonica
   #venue-map.container
 
+
+
 .about-fluid.container-fluid
   .about.container
     .row
       .span12
         %p.headings About
+    .row.description
+      .span12
+        %p This is a simple guide to most of the hardcore/punk shows that are happening now in Zagreb. 
+        %p Information is automatically fetched from a online group calendar where 25+ people involved in doing punk shows are posting events they're doing while trying not to step on each others feet.
+        %p This should be as comprehensive as it gets, although there's not a 100% guarantee that every single show will be listed. 
+        %p People organizing these shows are I00% anti-fascits, anti-nationalists, anti-patriots, anti-homophobic and anti-bullshit.
+        %p Hopefully you'll find this useful.

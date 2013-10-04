@@ -12,4 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require venue_maps
+//= require waypoints
+//= require waypoints-sticky
+
+$(document).ready(function(){
+	  $('a[href^=#]').click(function(e){
+	    var name = $(this).attr('href').substr(1);
+	    var pos = $('.'+ name + '-fluid').offset();
+	    $('body').animate({ scrollTop: pos.top - 55 });
+	    e.preventDefault();
+	  });
+
+	  $('.navigation').waypoint('sticky');
+});
