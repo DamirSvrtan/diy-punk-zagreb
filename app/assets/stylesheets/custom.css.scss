@@ -5,6 +5,7 @@
 
 $blue: #75A1E4;
 $orange: #FFCD77;
+$grey: #E9E5DC;
 
 @import "navigation";
 body{
@@ -27,6 +28,7 @@ body{
 	}
 	.next-show-fluid{
 		background-color: $blue;
+		border-bottom: 5px solid $orange;
 		.next-show{
 			padding-top:20px;
 			.row{
@@ -79,6 +81,7 @@ body{
 
 	.venues-fluid{
 		background-color: #E9E5DC;
+		height: 650px;
 		.venues{
 			padding-top:20px;
 			.row{
@@ -92,7 +95,7 @@ body{
 								background-color: white;
 								cursor: pointer; 
 							}
-							&.hovered{
+							&.selected{
 								background-color: white;
 								cursor: pointer; 
 							}
@@ -102,7 +105,7 @@ body{
 			}
 		}
 		#venue-map{
-			height:400px;
+			height:500px;
 		}
 	}
 

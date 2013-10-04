@@ -7,21 +7,25 @@
 		left:50%;
 		margin-left:-250px;
 		margin-top: 3px;
-		.navigation-link-1, .navigation-link-2, .navigation-link-3{
+		.navigation-link-1, .navigation-link-2, .navigation-link-3, .navigation-link-4{
 			display:inline-block;
 			font-family: 'Droid Sans', sans-serif;
 		}
 		.navigation-link-1{
-			width:145px;
+			width:125px;
 			text-align: right;
 		}
 		.navigation-link-2{
-			width:200px;
-			text-align: center;
+			width:165px;
+			text-align: right;
 		}
 		.navigation-link-3{
-			width:145px;
-			text-align: left;
+			width:100px;
+			text-align: right;
+		}
+		.navigation-link-4{
+			width: 90px;
+			text-align: right;
 		}
 	}
 }
