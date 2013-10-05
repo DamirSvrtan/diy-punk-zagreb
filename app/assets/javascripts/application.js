@@ -28,7 +28,7 @@ var navigation_links = ["next-show", "future-shows", "venues", "about"];
 				 var pos = $('.'+ name + '-fluid').offset();
 
 				window.location.hash = "#"+navigation_link;
-				
+
 				 $('body').animate({ scrollTop: pos.top - 55 });
 				 e.preventDefault();
 			 });
@@ -52,4 +52,31 @@ var navigation_links = ["next-show", "future-shows", "venues", "about"];
 	  $(window).on('mousewheel', function(){
 	  	$('.navigation-link a').removeClass('ci-selected');
 	  });
+
+
+
+	//   $('.location-sort').on('click', function(e){
+	//   	e.preventDefault();
+	//   	var all_rows = $('.future-shows tbody tr')
+	//   	$('.future-shows tbody').append($(all_rows).sort(SortByLocation))
+	//   })
+
+
+	//   $('.start-time-sort').on('click', function(e){
+	//   	e.preventDefault();
+	//   	var all_rows = $('.future-shows tbody tr')
+	//   	$('.future-shows tbody').append($(all_rows).sort(SortByStartTime))
+	//   })
+
+	// function SortByLocation(b, a){
+ //  		var aName = $(a).children('.location').text().toLowerCase();
+ //  		var bName = $(b).children('.location').text().toLowerCase();
+ //  		return ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0));
+	// }
+
+	// function SortByStartTime(b, a){
+ //  		var aName = $(a).children('.start-time').text().toLowerCase();
+ //  		var bName = $(b).children('.start-time').text().toLowerCase();
+ //  		return ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0));
+	// }
 });

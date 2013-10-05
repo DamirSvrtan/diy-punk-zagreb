@@ -1,6 +1,8 @@
 .headline.container-fluid
   %p#headline DIY Punk Shows Zagreb
+
 = render 'layouts/navigation'
+
 .next-show-fluid.container-fluid
   .next-show.container
     .row.heading-row
@@ -41,7 +43,7 @@
           %tr
             %th.start-time= Date.iso8601(event["start_time"]).strftime("%d-%m-%y")
             %th= truncate event["name"], length: 65
-            %th= event["location"]
+            %th.location= event["location"]
             %th.links
               = facebook_link(event["description"])
               = lastfm_link(event["description"])
@@ -80,5 +82,5 @@
         %p This is a simple guide to most of the hardcore/punk shows that are happening now in Zagreb. 
         %p Information is automatically fetched from a online group calendar where 25+ people involved in doing punk shows are posting events they're doing while trying not to step on each others feet.
         %p This should be as comprehensive as it gets, although there's not a 100% guarantee that every single show will be listed. 
-        %p People organizing these shows stand I00% against fascism, racism nationalism, patriotism, homophobia and any kind of fake pride.
+        %p People organizing these shows stand I00% against fascism, racism, nationalism, patriotism, homophobia and any kind of fake pride.
         %p Hopefully you'll find this useful.
