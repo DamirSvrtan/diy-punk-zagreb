@@ -14,7 +14,6 @@ $grey: #E9E5DC;
 	width: calc(100% - 40px);
 	z-index: 200;
 	background-color: #D6C398;
-
 	}
 body{
 	.headline{
@@ -47,24 +46,31 @@ body{
 		border-bottom: 5px solid $orange;
 		.next-show{
 			padding-top:20px;
+			padding-bottom: 5px;
 			.row{
 				padding-left: 10px;
 			}
+			.title-of-the-show, .date-of-show, .location-of-show, .more-info-next-show{
+				color:$grey;
+				text-align:center;
+				text-shadow:0px 1px #030303;
+			}
 			.title-of-the-show{
-				color:white;
 				font-size: 25px;
 				line-height: 25px;
 				font-weight:bold;
 			}
 			.date-of-show{
-				color:white;
-				font-size:20px;
+				font-size:22px;
 				line-height: 30px;
 			}
 			.location-of-show{
 				font-size:20px;
-				line-height: 30px;
+				line-height: 25px;
 				font-weight: bold;
+			}
+			.more-info-next-show{
+
 			}
 		}
 	}
@@ -84,7 +90,7 @@ body{
 					background-color:#F0F0F0;
 				}
 				tbody tr:nth-child(even) th {
-					background-color:#FFF;
+					background-color:$orange;
 				}
 				thead{
 					tr{
@@ -96,8 +102,13 @@ body{
 					}
 				}
 			}
+			th.start-time{
+				padding-left:15px;
+			}
 			th.links{
+				text-align: center;
 				padding: 0px;
+				padding-bottom: 3px;
 			}
 		}
 	}

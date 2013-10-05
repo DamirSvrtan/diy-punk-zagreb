@@ -28,7 +28,7 @@ var navigation_links = ["next-show", "future-shows", "venues", "about"];
 				 var pos = $('.'+ name + '-fluid').offset();
 
 				window.location.hash = "#"+navigation_link;
-
+				
 				 $('body').animate({ scrollTop: pos.top - 55 });
 				 e.preventDefault();
 			 });
@@ -40,6 +40,8 @@ var navigation_links = ["next-show", "future-shows", "venues", "about"];
 
 	  if (window.location.hash != ""){
 	  	$('a[href='+ window.location.hash+']').trigger('click');
+	  	$('.navigation-link a').removeClass('ci-selected');
+	  	$('a[href='+window.location.hash+']').addClass('ci-selected');
 	  }
 
 	  $('.navigation-link').on('click', function(){
