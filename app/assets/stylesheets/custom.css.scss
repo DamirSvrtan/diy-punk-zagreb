@@ -8,7 +8,13 @@ $orange: #FFCD77;
 $grey: #E9E5DC;
 
 @import "navigation";
-.stuck{position: fixed; top: 0;width:1545px;z-index: 200}
+.stuck{
+	position: fixed; 
+	top: 0;
+	width: calc(100% - 40px);
+	z-index: 200
+
+	}
 body{
 	.headline{
 		height:100px;
