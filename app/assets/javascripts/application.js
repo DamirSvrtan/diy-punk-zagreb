@@ -17,12 +17,37 @@
 //= require waypoints-sticky
 
 $(document).ready(function(){
-	  $('a[href^=#]').click(function(e){
-	    var name = $(this).attr('href').substr(1);
-	    var pos = $('.'+ name + '-fluid').offset();
-	    $('body').animate({ scrollTop: pos.top - 55 });
-	    e.preventDefault();
-	  });
+
+var navigation_links = ["next-show", "future-shows", "venues", "about"];
+
+	navigation_links.forEach(
+		function(navigation_link){	
+			 $('a[href=#'+ navigation_link+"]").click(function(e){
+
+				 var name = $(this).attr('href').substr(1);
+				 var pos = $('.'+ name + '-fluid').offset();
+
+				window.location.hash = "#"+navigation_link;
+
+				 $('body').animate({ scrollTop: pos.top - 55 });
+				 e.preventDefault();
+			 });
+		}
+	);
 
 	  $('.navigation').waypoint('sticky');
+
+
+	  if (window.location.hash != ""){
+	  	$('a[href='+ window.location.hash+']').trigger('click');
+	  }
+
+	  $('.navigation-link').on('click', function(){
+	  	$('.navigation-link a').removeClass('ci-selected');
+	  	$(this).children('a').addClass('ci-selected');
+	  })
+
+	  $(window).on('mousewheel', function(){
+	  	$('.navigation-link a').removeClass('ci-selected');
+	  });
 });

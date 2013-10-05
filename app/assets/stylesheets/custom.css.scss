@@ -12,7 +12,8 @@ $grey: #E9E5DC;
 	position: fixed; 
 	top: 0;
 	width: calc(100% - 40px);
-	z-index: 200
+	z-index: 200;
+	background-color: #D6C398;
 
 	}
 body{
@@ -27,6 +28,10 @@ body{
 			margin-top: 40px;
 		}
 	}
+
+
+
+
 	.headings{
 		font-family: 'Exo', sans-serif;
 		font-size:35px;
