@@ -1,8 +1,8 @@
 class EventsController < ApplicationController
 
-	APP_ACCESS_TOKEN = "CAAHNwuLPttUBAKR2kNZCMfIISZCpd0ajwU0vvI3HOdkkYPcrBikrB3Oa2SnWluasLiegJ9FQZBtmfTzoeUmyu7RDWHGP7XuX2t0Rfw1ZBYDprsOIANDXvXOWxK2qFgdPYXr8q5S8yAhpERBCR49tqvZBfZAtDkmjR919FbL95KXURQZBWd1A96K"
+	access_token = ENV["FB_APP_ACCESS_TOKEN"]
 	
-	before_filter {	@graph = Koala::Facebook::API.new(APP_ACCESS_TOKEN) }
+	before_filter {	@graph = Koala::Facebook::API.new(access_token)}
 
 	def index
 		@events = @graph.get_connections("334751420002389", "events", {fields: "start_time,name,location,id,description"})
@@ -11,9 +11,12 @@ class EventsController < ApplicationController
 		@next_show = @events.first
 	end
 
-	def show
-		@events = @graph.get_object(params[:id])
-	end
 
+ # GET LONG LIVED ACCESS TOKEN
+ # https://graph.facebook.com/oauth/access_token?             
+ #    client_id=APP_ID&
+ #    client_secret=APP_SECRET&
+ #    grant_type=fb_exchange_token&
+ #    fb_exchange_token=EXISTING_ACCESS_TOKEN 
 
 end
