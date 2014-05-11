@@ -1,7 +1,11 @@
 class EventsController < ApplicationController
 	def index
-		@events = Events.all
-		@next_show = @events.first
+		begin
+			@events = Events.all
+			@next_show = @events.first
+		rescue Koala::Facebook::ClientError => exception
+			Raven.capture_exception(exception)
+		end
 	end
 
 	# GET LONG LIVED ACCESS TOKEN

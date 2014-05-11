@@ -13,6 +13,7 @@ group :assets do
 end
 
 gem 'newrelic_rpm'
+gem 'sentry-raven'
 
 group :development, :test do
   gem 'sqlite3'
