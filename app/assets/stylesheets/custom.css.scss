@@ -14,7 +14,8 @@ $grey: #E9E5DC;
 	width: calc(100% - 40px);
 	z-index: 200;
 	background-color: #D6C398;
-	}
+}
+
 body{
 	.headline{
 		height:100px;
@@ -28,18 +29,12 @@ body{
 		}
 	}
 
-
-
-
 	.headings{
 		font-family: 'Exo', sans-serif;
 		font-size:35px;
 		font-weight:bold;
 		line-height: 40px;
 	}
-
-
-
 
 	.next-show-fluid{
 		background-color: $blue;
@@ -157,26 +152,4 @@ body{
 			}
 		}
 	}
-
-
-
-
-
-
-
-
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
