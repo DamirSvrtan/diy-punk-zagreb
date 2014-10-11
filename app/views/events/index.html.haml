@@ -14,17 +14,15 @@
     .row
       .span12
         %p.date-of-show
-          %b 
+          %b
             = Date.iso8601(@next_show["start_time"]).strftime("%d-%m-%y")
         %p.location-of-show
-          %b 
+          %b
             = @next_show["location"]
     .row.more-info-next-show
       .span12
-        = facebook_link(@next_show["description"])
-        = lastfm_link(@next_show["description"])
-
-
+        = social_network_link(@next_show["description"], :facebook)
+        = social_network_link(@next_show["description"], :lastfm)
 
 .future-shows-fluid.container-fluid
   .future-shows.container
@@ -45,8 +43,8 @@
             %th= truncate event["name"], length: 65
             %th.location= event["location"]
             %th.links
-              = facebook_link(event["description"])
-              = lastfm_link(event["description"])
+              = social_network_link(@next_show["description"], :facebook)
+              = social_network_link(@next_show["description"], :lastfm)
 
 
 
@@ -63,7 +61,7 @@
             %th.venue AKC Medika
             %th.venue AKC Attack
             %th.venue Grey Room
-            %th.venue Warehouse / Supica 
+            %th.venue Warehouse / Supica
             %th.venue Mocvara
             %th.venue Jedinstvo
             %th.venue Spunk
@@ -79,8 +77,8 @@
         %p.headings About
     .row.description
       .span12
-        %p This is a simple guide to most of the hardcore/punk shows that are happening now in Zagreb. 
+        %p This is a simple guide to most of the hardcore/punk shows that are happening now in Zagreb.
         %p Information is automatically fetched from a online group calendar where 25+ people involved in doing punk shows are posting events they're doing while trying not to step on each others feet.
-        %p This should be as comprehensive as it gets, although there's not a 100% guarantee that every single show will be listed. 
+        %p This should be as comprehensive as it gets, although there's not a 100% guarantee that every single show will be listed.
         %p People organizing these shows stand I00% against fascism, racism, nationalism, patriotism, homophobia and any kind of fake pride.
         %p Hopefully you'll find this useful.

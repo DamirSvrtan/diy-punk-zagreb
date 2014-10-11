@@ -2,27 +2,19 @@ module ApplicationHelper
 
 	PHOTO_SIZE = "18x18"
 
-	def facebook_link(description)
-		fb_link = facebook_scrapper(description)
-		if fb_link.present?
-			link_to (image_tag "facebook.jpg", size: PHOTO_SIZE), "https://" + fb_link, target: "blank"
+	FACEBOOK_REGEX = /facebook.com\/events[\S]+/
+	LASTFM_REGEX   = /last.fm\/event[\S]+/
+
+	def social_network_link(description, network_type=:facebook)
+		link = link_scrapper(description, network_type)
+		if link.present?
+			link_to((image_tag "#{network_type}.jpg", size: PHOTO_SIZE), "https://#{link}", target: "blank")
 		end
 	end
 
-	def lastfm_link(description)
-		lastfm_link = lastfm_scrapper(description)
-		if lastfm_link.present?
-			link_to (image_tag "lastfm.png", size: PHOTO_SIZE), "http://" + lastfm_link, target: "blank"
-		end
-	end
-
-	def facebook_scrapper(text)
-		fb_link = /facebook.com\/events[\S]+/.match text
-		fb_link.to_s
-	end
-
-	def lastfm_scrapper(text)
-		lastfm_link = /last.fm\/event[\S]+/.match text
-		lastfm_link.to_s
+	def link_scrapper(text, network_type=:facebook)
+		regex = ApplicationHelper.const_get("#{network_type.upcase}_REGEX")
+    link = regex.match(text)
+		link.to_s
 	end
 end
