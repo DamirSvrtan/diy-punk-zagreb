@@ -1,0 +1,13 @@
+---
+rules:
+  ignore:
+  - extra_blank_line_detected
+  - extra_blank_line_detected_at_body_beginning
+  - extra_blank_line_detected_at_body_end
+  - prefer_single_quoted_strings
+  - remove_trailing_whitespace
+  - space_between_curly_brace_and_pipe_missing
+  - space_inside_closing_curly_brace_missing
+  - space_inside_opening_curly_brace_missing
+  - space_missing_inside_closing_curly_brace
+  - space_missing_inside_opening_curly_brace
